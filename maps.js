@@ -1,12 +1,13 @@
 const emojis = {
   '-': ' ',
   'O': '🚪',
-  'X': '💣',
+  'X': '🕳️',
   'I': '🎁',
-  'PLAYER': '💩',
+  'PLAYER': '🦮',
   'BOMB_COLLISION': '🔥',
   'GAME_OVER': '👎',
   'WIN': '🏆',
+  'HEART': '❤️'
 };
 
 const maps = [];
