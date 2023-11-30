@@ -20,7 +20,18 @@ canvas {
   border-radius: 8px;
   background-color: #757570;
 }
-
+.restart-box{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+}
+#button-restart{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
 .btns {
   display: flex;
   justify-content: center;

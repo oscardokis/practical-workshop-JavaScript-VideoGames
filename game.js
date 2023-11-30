@@ -7,6 +7,8 @@ const buttonLeft = document.querySelector('#left');
 const spanLives = document.querySelector('#lives');
 const spanTime = document.querySelector('#time');
 const highScore = document.querySelector('#Score');
+const buttonRestart = document.querySelector('#button-restart');
+
 
 window.addEventListener('resize', setCanvasSize);
 window.addEventListener('load', setCanvasSize);
@@ -33,6 +35,7 @@ buttonUp.addEventListener('click', moveUp);
 buttonDown.addEventListener('click', moveDown);
 buttonRight.addEventListener('click', moveRight);
 buttonLeft.addEventListener('click', moveLeft);
+buttonRestart.addEventListener('click', restart);
 let canvasSize;
 let elementsSize;
 function startGame() {
@@ -149,7 +152,7 @@ function gameOver(){
   }else{
     localStorage.setItem('record_time', playerTime);
   }
-  console.log({recordTime, playerTime})
+  console.log({recordTime, playerTime});
 }
 function levelFail(){
   lives--;
@@ -199,5 +202,16 @@ function moveRight(){
 function moveLeft(){
   playerPosition.x -= elementsSize;
   if(playerPosition.x < 0) playerPosition.x += elementsSize;
+  startGame();
+}
+function restart(){
+  clearInterval(timeInterval);
+  playerPosition.x = undefined;
+  playerPosition.y = undefined;
+  level = 0;
+  lives = 3;
+  giftPosition.x = undefined;
+  giftPosition.y = undefined;
+  timeStart = undefined;
   startGame();
 }
